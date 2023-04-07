@@ -1,0 +1,17 @@
+extends layout
+
+block content
+  h1= title
+  - let results = [{Einstein_name:"Meghana",Einstein_age:"23",Einstein_height:"5.3'"},{Einstein_name:"riya",Einstein_age:"22",Einstein_height:"5.5'"},{Einstein_name:"Ajay",Einstein_age:"24",Einstein_height:"5.4'"}]
+  div(class="container-fluid")
+    div(class="row")
+      each item,index in results
+        div(class="col-sm-2",onClick=`buy(${index})`)
+          p Name is #{item.Einstein_name}
+          p Type is #{item.Einstein_age}
+          p Cost is #{item.Einstein_height}
+  script.
+    function buy(mg){
+      mg=mg+1;
+      alert("You Purchased Item" +mg);
+    }
